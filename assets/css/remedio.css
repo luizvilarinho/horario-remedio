@@ -74,6 +74,15 @@ section:first-child{
     width:auto;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
+#footer{
+    background-color: var(--green);
+    height: 3rem;
+    text-align: right;
+    padding-top:10px;
+}
+#footer small{
+    color: white;
+}
 .green{
     color:var(--green);
 }
