@@ -1,0 +1,555 @@
+/*azul background  #5f9ea0ff;
+azul claro #b0e0e6ff
+cinxa claro #dcdcdcff
+escuro:#1f3131ff;
+cinza_background: e6e6e6ff;
+*/
+
+*{
+  padding: 0;
+  margin: 0;
+  border:0;
+  text-decoration: none;
+}
+body{
+  font-family: Calibri, sans-serif;
+  font-size: 12px;
+}
+
+
+header{
+  background-color: #c1c1c1;
+  height: 50px;
+  background-color: #5f9ea0ff;
+}
+header a{
+  color:#dcdcdcff;
+}
+h2{
+color:#dcdcdcff;
+font-weight: 300;
+margin-left: 5px;
+font-size: 2em;
+margin-bottom: 5px;
+}
+.menu{
+  width:96%;
+  margin:0 auto;
+}
+#alert-container{
+  display: none;
+  min-height: 50px;
+  width: 100%;
+  background-color:coral;
+  position: absolute;
+  border-bottom:1px solid #c1c1c1;
+}
+#alert-container div{
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  color: #292121;
+}
+#menuPrincipal li{
+  float: right;
+  list-style: none;
+  padding:10px;
+  font-size: 2em;
+  font-weight: 200;
+  color:#dcdcdcff;
+  cursor:pointer;
+}
+#menuPrincipal li:hover{
+color: white;
+}
+#menuPrincipal li:active{
+color:#b0e0e6ff;
+}
+#menuLateral .titulo-container{
+  margin: 5px 20px 15px 20px;
+}
+#menuLateral .lateral li{
+  margin-left: 25px;
+  list-style: none;
+  color:#dcdcdcff;
+  font-size: 1.2em;
+  margin-bottom: 3px;
+}
+.teste{
+  background-image: url('../images/addIcon.svg');
+  background-repeat: no-repeat;
+  float: right;
+  vertical-align: middle;
+  margin-top: 13px;
+}
+.teste:hover{
+  background-image: url('../images/addIcon_hover.svg');
+}
+.teste:active{
+  background-image: url('../images/addIcon.svg');
+}
+#menuLateral .addIcon{
+  padding: 10px;
+  cursor:pointer;
+  box-sizing: border-box;
+}
+#blocoCentral h2{
+  color:#5f9ea0ff;
+  font-weight: 400;
+}
+#listInformation h2{
+  color:#dcdcdcff;
+  font-weight: 200;
+}
+#blocoCentral .titleContainer, #listInformation .titleContainer{
+  border-bottom: 1px solid #5f9ea0ff;
+  width: 90%;
+  margin: 0 auto 15px auto;
+  margin-top: 25px;
+}
+#blocoCentral .titleContainer a{
+  text-decoration: none;
+  color:#dcdcdcff;
+  font-size: 0.75em;
+  margin-left:15px;
+  margin-right:5px;
+}
+#blocoCentral .titleContainer a.selected{
+  color:#c1c1c1;
+}
+#blocoCentral .titleContainer a:hover{
+  color:#c1c1c1;
+}
+#blocoCentral .titleContainer a:active{
+  color:#b0e0e6ff;
+}
+#blocoCentral .inputContainer, #listInformation .inputContainer{
+  border:1px solid #b0e0e6ff;
+  width: 90%;
+  margin: 0 auto 0 auto;
+  height: 30px;
+  border-radius: 3px;
+}
+#blocoCentral input[type='text'], #listInformation input[type='text']{
+  width: 94%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#blocoCentral input::placeholder, #listInformation input::placeholder{
+  /* position: relative;
+  top:10px; */
+  padding: 10px;
+  color:#dcdcdcff;
+  font-size: 1.2em;
+}
+#blocoCentral button, #listInformation button{
+border-radius: 3px;
+height: 100%;
+width: 6%;
+background-color: #75abacff;
+color: #f5f5f5ff;
+}
+#blocoCentral button:active, #listInformation button:active{
+  background-color: #b0e0e6ff;
+  color:#5f9ea0ff;
+}
+#blocoCentral .listContainer, #listInformation .listContainer{
+  width: 100%;
+  height: auto;
+  margin: 10px auto 10px auto;
+}
+
+#blocoCentral .itemContainer, #listInformation .itemContainer{
+  padding: 15px 20px 15px 23px;
+}
+#blocoCentral .itemContainer:hover{
+  background-color: #efefefff;
+}
+#listInformation .itemContainer:hover{
+  background-color: #5e9494ff;
+}
+#blocoCentral input[type='checkbox'], #listInformation input[type='checkbox']{
+  display: none;
+}
+#blocoCentral label, #listInformation label{
+  font-size: 1.3em;
+  margin: 5px;
+  color:#1f3131ff;
+  vertical-align: middle;
+  position: relative;
+  height: auto;
+  width: 70%;
+}
+#listInformation label{
+  color:#b0e0e6ff;
+}
+#container-tarefas{
+  margin: 20px;
+}
+#container-tarefas h2{
+  color:#1f3131ff;
+  margin:20px;
+  border-bottom: 1px solid #dcdcdcff;
+}
+#container-tarefas section{
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  height: 100px;
+  border:1px solid #dcdcdcff
+}
+input[type='checkbox'] + label:before{
+  width: 15px;
+  height: 15px;
+  border:1px solid #b0e0e6ff;
+  background-color: #ffffff;
+  border-radius: 3px;
+  display: inline-block;
+  content: "";
+  margin-right: 12px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+  cursor:pointer;
+}
+input[type='checkbox']:checked + label:before{
+    font-family: 'Material Icons';
+     content: "check";
+     font-weight: 800;
+     color:#5f9ea0ff;
+     text-align: center;
+}
+#blocoCentral .deleteIcon, #listInformation .deleteIcon{
+width: 10%;
+height: auto;
+padding: 0;
+text-align: right;
+float: right;
+margin-right:4%;
+color: #c1c1c1;
+display: none;
+}
+#listInformation .deleteIcon{
+  color:#b0e0e6ff;
+}
+#doneComponent{
+  width: 90%;
+  margin: 20px auto 20px auto;
+  border-radius: 8px;
+  border:1px solid #dcdcdcff;
+  text-align: center;
+}
+#doneComponent .doneItem{
+  width: 25%;
+  border-radius: 8px;
+  background-color: #b0e0e6ff;
+  text-align: center;
+  height: 13px;
+}
+#doneComponent span{
+  position: absolute;
+  color: #1f3131ff;
+  opacity: 0.9;
+}
+#annotation .annotationItem{
+  width: 90%;
+  margin:0 auto;
+  min-height: 55px;
+  background-color: #b3d6d8ff;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+#annotation .editAnnotation{
+  width: 90%;
+  margin: 0 auto;
+  border-top: 1px solid #5f9ea0ff;
+  text-align: right;
+  padding: 10px 0 10px 0;
+}
+
+.editAnnotation span{
+  margin-left: 25px;
+  color:#5f9ea0ff;
+  font-size: 1.2em;
+  cursor:pointer;
+}
+.editAnnotation span:hover{
+  font-weight: 600
+}
+.txtAnnotation{
+  width: 90%;
+  color:#5f9ea0ff;
+  font-size: 1.2em;
+  margin: 0 auto 20px auto;
+  padding: 20px 0 10px 0;
+}
+#blocoCentral .material-icons, #listInformation .material-icons{
+  width: 10px;
+  height: auto;
+  vertical-align: middle;
+  font-size: 18px;
+  cursor:pointer;
+}
+#loginContainer{
+  height: calc(100vh - 60px);
+  width: 100%;
+}
+#loginContainer .login-card{
+  width: 368px;
+  min-height: 200px;
+  height: auto;
+  margin: 0 auto;
+  background-color: #fffffffa;
+  border-radius: 0px;
+  position: relative;
+  top:60 px;
+  padding-bottom:40px;
+}
+#loginContainer .login-card-header{
+  border-radius: 0;
+  height: 60px;
+  background-color: #5f9ea0fd;
+  text-align: center;
+}
+#loginContainer .login-card-header h2{
+padding: 14px;
+}
+#loginContainer .login-inputs{
+  width: 315px;
+  height: auto;
+  margin: 0 auto;
+}
+#loginContainer .login-inputs input{
+  width: 100%;
+  height: 30px;
+  margin-top: 25px;
+  border-bottom: 1px solid #b3b3b3ff;
+}
+#loginContainer a{
+  border-radius: 0;
+}
+.list-length{
+  background-color: #b0e0e6ff;
+  width: auto;
+  height: 18px;
+  color: #5f9ea0ff;
+  padding: 0px 3px 0px 3px;
+  position: relative;
+  top: -8px;
+  border-radius: 3px;
+}
+.item-header{
+  background-color:#5f9ea0ff;
+  height: 100%
+}
+.item-central{
+  height: 100%
+}
+.center{
+  margin:0,auto,0, auto;
+}
+.grid{
+  display:grid;
+}
+.grid-template-columns-1{
+  grid-template-columns:100%;
+}
+
+.grid-template-columns-3{
+  grid-template-columns: 200px 1fr 1fr;
+  height: calc(100vh - 60px);
+}
+.grid-template-columns-2{
+  grid-template-columns: 200px 1fr;
+  height: calc(100vh - 60px);
+}
+.background-blue{
+  background-color: #5f9ea0ff;
+}
+
+.fly-r{
+  float: right;
+}
+.md-marginBottom{
+  margin-bottom: 25px;
+}
+.borderBottom{
+  border-bottom: 1px solid  #b0e0e6ff;
+}
+.md-marginTop{
+  margin-top:35px!important;
+}
+.listIconContainer{
+  width: 90%;
+  margin:0 auto;
+  cursor:pointer;
+}
+.listIconContainer img:active{
+
+}
+.boxListas{
+  width: 15%;
+  background-color: #def2f4ff;
+  box-shadow:0px 0px 25px rgba(0,0,0,0.2);
+  position: absolute;
+  display:none;
+}
+#listInformation li{
+  width: 100%;
+  border-bottom: 1px solid #b0e0e6ff;
+  color:#5f9ea0ff;
+  margin:0;
+  height: auto;
+}
+.boxListas div{
+  color:#5f9ea0ff;
+  font-size: 1.4em;
+  padding: 10px;
+  border-bottom: 1px solid #bbe4e8fa;
+}
+.boxListas div:hover{
+  background-color:#bbe4e8fa;
+}
+.vertical-align-middle{
+  vertical-align: middle;
+}
+.hidden{
+  display:none;
+}
+.show{
+  display:block;
+}
+.bg-gray{
+  background-color: #e6e6e6ff;
+}
+.row{
+  width: 100%;
+  height: auto;
+}
+.btn-bubble-md{
+  width: 130px;
+  height: 40px;
+  margin: 25px auto 25px auto;
+  text-align: center;
+}
+.btn-bubble-md a{
+    width: 100%;
+    height: auto;
+    background-color: #609fa1ff;
+    color:#f5f5f5ff;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.4em;
+    padding: 10px 0 10px 0;
+    margin-top: 25px;
+}
+.btn-bubble-md a:hover{
+  box-shadow:0px 0px 25px rgba(0,0,0,0.2);
+}
+.btn-bubble-md a:active{
+  background-color: #b0e0e6ff;
+  color:#5f9ea0ff;
+  text-decoration: none;
+}
+
+.linkEsqueceuASenha{
+  margin-top:35px;
+  text-align: right;
+  padding-top:45px;
+}
+.linkEsqueceuASenha a{
+text-decoration: none;
+font-size: 1.6em;
+color:#b3d6d8ff;
+margin: 20px;
+}
+.linkEsqueceuASenha a:hover{
+  color:#5f9ea0fd;
+}
+.linkEsqueceuASenha a:active{
+opacity:0.5;
+}
+.relative-lg-top{
+  top:45px;
+}
+.aviso{
+  font-size: 1.6em;
+  color:#5f9ea0ff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+/*NOVO CSS*/
+#cardsModuloTarefa{
+  padding-top:15px;
+  height: 100%;
+}
+#cardsModuloTarefa h2{
+  width: 67%;
+  margin-left: 20px;
+}
+article.cardTarefa{
+  width:31%;
+  height: auto;
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: top;
+}
+.cardTarefa .titulo{
+  text-align: center;
+  background-color: #5f9ea0ff;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color:#dcdcdcff;
+  padding: 5px;
+}
+.cardTarefa .titulo:after{
+  content:"add";
+  margin-right: 11px;
+  float: right;
+  font-size: 1rem;
+  padding: 4px;
+  cursor: pointer;
+}
+.cardTarefa .texto-item-container{
+  
+  font-size: 1.1rem;
+  color: #383838;
+  padding: 15px;
+}
+#cardsModuloTarefa .item{
+  margin: 10px 0 10px 0;
+  border: 1px solid #c1c1c1;
+
+}
+.cardTarefa .container-itens-menu{
+  height: auto;
+  color:#5f9ea0;
+}
+.cardTarefa .container-itens-menu ul{
+  list-style: none;
+  display: flex;
+  padding: 8px;
+  flex-direction: row;
+  background-color: #d2e2e2;
+}
+.cardTarefa .container-itens-menu ul li{
+  flex:1;
+  text-align: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+#task-info{
+  width: 500px;
+  min-height: 100vh;
+  height: auto;
+  background-color: #4f6f80;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+#task-info #listInformation{
+  background-color: unset;
+}

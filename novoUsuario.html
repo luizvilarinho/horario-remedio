@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>terapia - novo usuário</title>
+  <link rel="stylesheet" href="assets/css/login-terapia.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<main class="center">
+  <section id="alert-container">
+    <article>
+      <div id="alert-message">Mensagem de alerta</div>
+    </article>
+  </section>
+  <header id="menuPrincipal" class="grid grid-template-columns-1">
+    <nav class="menu">
+      <ul>
+        <li>novo usuário</li>
+        <li><a href="login_terapia.html">login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <section id="loginContainer" class="bg-gray">
+      <article class="login-card relative-lg-top">
+        <div class="login-card-header">
+          <h2>novo usuário</h2>
+        </div>
+          <div class="login-inputs">
+            <!--NOTE o input nome so aparece quando clicado em novo usuario-->
+            <input type="text" id="nome" value="" name="nome" placeholder="digite seu nome" class="" />
+            <input type="text" id="email" value="" name="email" placeholder="digite seu email" />
+            <input type="password" id="senha" value="" name="senha" placeholder="digite sua senha" />
+          </div>
+        <div class="btn-bubble-md">
+          <a href="javascript:;" onclick="cadastrarUsuario()">cadastrar</a>
+        </div>
+        
+      </article>
+    </section>
+
+</main>
+
+<script src="assets/js/terapia-login.js"></script>
+
+</body>
+</html>
